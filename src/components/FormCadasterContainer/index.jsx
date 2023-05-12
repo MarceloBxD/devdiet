@@ -4,29 +4,41 @@ import { View, Text, Image } from "react-native";
 import { TextInput, Checkbox, Snackbar } from "react-native-paper";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 import Button from "../Button";
 import AfterButtonText from "../AfterButtonText";
 
 export default () => {
+  const navigation = useNavigation();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [showPassword, setShowPassword] = useState(false);
 
   const [isChecked, setIsChecked] = useState(false);
-
-  const [response, setResponse] = useState({});
   const [error, setError] = useState("");
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     const data = {
+      name,
       email,
       password,
     };
 
     try {
-      const response = await axios.post("http://192.168.1.37:3000/login", data);
-      setResponse(response.data);
+      const response = await axios.post(
+        "http://192.168.1.37:3000/register",
+        data
+      );
+      console.log(response.data);
+      if (response) {
+        navigation.navigate("Login");
+        setName("");
+        setEmail("");
+        setPassword("");
+      }
     } catch (err) {
       if (err.response.data.error) {
         setError(err.response.data.error);
@@ -52,7 +64,21 @@ export default () => {
       }}
     >
       <C.FormContainer>
-        <Text style={{ fontSize: 18, fontWeight: 700 }}>Email</Text>
+        <Text style={{ fontSize: 18, fontWeight: 700 }}>Name</Text>
+        <TextInput
+          value={name}
+          onChangeText={(text) => setName(text)}
+          placeholderTextColor="#ADADAD"
+          placeholder="Enter your email"
+          activeUnderlineColor="#F9A826"
+          outlineColor="#F9A826"
+          keyboardType="email-address"
+          mode="flat"
+          style={{ backgroundColor: "transparent" }}
+        />
+        <Text style={{ fontSize: 18, fontWeight: 700, marginTop: 20 }}>
+          Email
+        </Text>
         <TextInput
           value={email}
           onChangeText={(text) => setEmail(text)}
@@ -131,8 +157,8 @@ export default () => {
       </C.FormContainer>
       <Button
         mode={"contained"}
-        onPress={() => handleLogin()}
-        title={"Login"}
+        onPress={() => handleRegister()}
+        title={"Register"}
       />
       {error && (
         <Snackbar
@@ -145,8 +171,20 @@ export default () => {
         </Snackbar>
       )}
 
-      <Text style={{ marginTop: 20, textAlign: "center", fontSize: 15 }}>
-        Don’t have an account yet? Register here
+      <Text
+        style={{
+          marginTop: 20,
+          textAlign: "center",
+          fontSize: 15,
+        }}
+      >
+        Do you have an account?{" "}
+        <Text
+          onPress={() => navigation.goBack("Login")}
+          style={{ color: "#F9A826" }}
+        >
+          Login
+        </Text>
       </Text>
       <AfterButtonText />
       <View

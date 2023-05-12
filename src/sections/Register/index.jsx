@@ -2,7 +2,7 @@ import { SafeAreaView } from "react-native";
 import * as Animatable from "react-native-animatable";
 
 import Bubble from "../../components/Bubble";
-import FormContainer from "../../components/FormLoginContainer";
+import FormCadasterContainer from "../../components/FormCadasterContainer/index";
 
 export default () => {
   return (
@@ -19,9 +19,9 @@ export default () => {
           top: 112,
         }}
       >
-        Login
+        Register
       </Animatable.Text>
-      <FormContainer />
+      <FormCadasterContainer />
     </SafeAreaView>
   );
 };
