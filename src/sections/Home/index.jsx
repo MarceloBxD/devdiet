@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import * as C from "./styles";
 import DietPercentContainer from "../../components/DietPercentContainer";
 import Meals from "../../components/Meals";
+import DaySummary from "../../components/DaySummary";
 
 export default () => {
   return (
@@ -22,6 +23,7 @@ export default () => {
         </C.Header>
         <DietPercentContainer />
         <Meals />
+        <DaySummary />
       </C.Container>
     </SafeAreaView>
   );

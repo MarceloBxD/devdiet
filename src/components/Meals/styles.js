@@ -35,7 +35,6 @@ export const Button = styled.TouchableOpacity`
   /* Inside auto layout */
 
   flex: none;
-  order: 1;
   align-self: stretch;
   flex-grow: 0;
 `;
