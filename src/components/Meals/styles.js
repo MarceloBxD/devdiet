@@ -47,6 +47,6 @@ export const TextButton = styled.Text`
 `;
 
 export const leftIcon = styled.Image`
-  width: 18;
-  height: 18;
+  width: 18px;
+  height: 18px;
 `;

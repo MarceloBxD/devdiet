@@ -6,7 +6,7 @@ import FormCadasterContainer from "../../components/FormCadasterContainer/index"
 
 export default () => {
   return (
-    <SafeAreaView style={{ backgroundColor: "#F9A826", flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: "#000", flex: 1 }}>
       <Bubble />
       <Animatable.Text
         animation={"fadeInLeft"}
