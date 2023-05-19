@@ -7,10 +7,8 @@ export const Container = styled.View`
   align-items: center;
   padding: 20px 16px;
   gap: 2px;
-  isolation: isolate;
-
   position: relative;
-  margin-top: 30px;
+  margin-top: ${(props) => props.marginTop || "30px"};
   /* Brand/Green/Light */
 
   background: #e5f0db;
@@ -32,6 +30,7 @@ export const Text = styled.Text`
 
 export const Icon = styled.Image`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: ${(props) => props.top};
+  right: ${(props) => props.right};
+  left: ${(props) => props.left || "auto"};
 `;

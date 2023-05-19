@@ -1,13 +1,11 @@
 import { SafeAreaView } from "react-native";
 import * as Animatable from "react-native-animatable";
 
-import Bubble from "../../components/Bubble";
 import FormCadasterContainer from "../../components/FormCadasterContainer/index";
 
 export default () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#000", flex: 1 }}>
-      <Bubble />
       <Animatable.Text
         animation={"fadeInLeft"}
         style={{

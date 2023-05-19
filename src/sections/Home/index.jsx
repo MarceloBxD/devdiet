@@ -3,9 +3,7 @@ import { Avatar, Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as C from "./styles";
 import * as Animatable from "react-native-animatable";
-import DietPercentContainer from "../../components/DietPercentContainer";
-import Meals from "../../components/Meals";
-import DaySummary from "../../components/DaySummary";
+import { DietPercentContainer, Meals, DaySummary } from "../../components";
 
 export default () => {
   return (
