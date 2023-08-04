@@ -9,12 +9,12 @@ export default () => {
       <Animatable.Text
         animation={"fadeInLeft"}
         style={{
-          fontSize: 48,
+          fontSize: 28,
           fontWeight: 700,
           color: "#fff",
           position: "absolute",
           left: 26,
-          top: 112,
+          top: 50,
         }}
       >
         Register

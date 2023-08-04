@@ -11,19 +11,43 @@ export default () => {
     {
       id: 2,
       hour: "16:00",
-      name: "Whey protein com leite",
+      name: "Whey protein",
       isDiet: true,
     },
     {
       id: 3,
       hour: "12:30",
-      name: "Salada cesar com frango",
+      name: "Salada cesar",
       isDiet: true,
     },
     {
       id: 4,
       hour: "9:30",
-      name: "Vitamina de banana com aveia",
+      name: "Vitamina",
+      isDiet: true,
+    },
+    {
+      id: 1,
+      name: "X-Tudo",
+      hour: "20:00",
+      isDiet: false,
+    },
+    {
+      id: 2,
+      hour: "16:00",
+      name: "Whey protein",
+      isDiet: true,
+    },
+    {
+      id: 3,
+      hour: "12:30",
+      name: "Salada cesar",
+      isDiet: true,
+    },
+    {
+      id: 4,
+      hour: "9:30",
+      name: "Vitamina",
       isDiet: true,
     },
   ];
@@ -34,7 +58,6 @@ export default () => {
       {summary.map((item) => (
         <C.ContainerMeal key={item.id}>
           <C.Hour>{item.hour}</C.Hour>
-          <C.Name>{item.name}</C.Name>
           <C.Status
             source={
               item.isDiet
@@ -42,6 +65,7 @@ export default () => {
                 : require("../../../assets/redstatus.png")
             }
           />
+          <C.Name>{item.name}</C.Name>
         </C.ContainerMeal>
       ))}
     </C.Container>

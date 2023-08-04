@@ -40,13 +40,15 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const TextButton = styled.Text`
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   text-align: center;
-  color: #ffffff;
+  color: #ccc;
+  height: 30px;
+  width: 100%;
 `;
 
 export const leftIcon = styled.Image`
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 `;

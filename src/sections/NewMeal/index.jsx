@@ -1,24 +1,19 @@
-import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text, View, Button } from "react-native";
 import * as Animatable from "react-native-animatable";
 import * as C from "./styles";
+import DateTimePickerAndroid from "@react-native-community/datetimepicker";
+
+import { useState } from "react";
 
 export default () => {
+  const [date, setDate] = useState(new Date(2020, 4, 25));
+  const [show, setShow] = useState(false);
+
+  const [isDiet, setIsDiet] = useState(false);
+  const [selected, setSelected] = useState(false);
+
   return (
     <>
-      <View>
-        <Text
-          style={{
-            textAlign: "center",
-            marginTop: 57,
-            fontWeight: 700,
-            fontSize: 18,
-          }}
-        >
-          Nova refeição
-        </Text>
-      </View>
-
       <Animatable.View
         animation="fadeInUpBig"
         style={{
@@ -34,6 +29,25 @@ export default () => {
         }}
       >
         <C.Label>Nome</C.Label>
+        <C.TextInput></C.TextInput>
+        <C.Label>Descrição</C.Label>
+        <C.TextInput></C.TextInput>
+
+        <C.Label style={{ marginTop: 30 }}>Está dentro da dieta?</C.Label>
+        <C.DietButton>
+          <Text style={{ color: "white" }}>Sim</Text>
+        </C.DietButton>
+        <C.DietButton>
+          <Text style={{ color: "white" }}>Não</Text>
+        </C.DietButton>
+
+        <Button title="Show Date Picker" onPress={() => setShow(true)} />
+        {show && (
+          <DateTimePickerAndroid
+            onChange={(date) => setDate(date)}
+            value={date}
+          />
+        )}
       </Animatable.View>
     </>
   );

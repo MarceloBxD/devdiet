@@ -14,7 +14,7 @@ export default () => {
           <C.Header>
             <C.Flex>
               <C.Logo source={require("../../../assets/ForkKnife.png")} />
-              <Text style={{ width: 36, fontWeight: "700" }}>Daily Diet</Text>
+              <Text style={{ width: 150, fontWeight: "700" }}>Daily Diet</Text>
             </C.Flex>
             <Avatar.Image
               size={55}

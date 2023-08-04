@@ -54,7 +54,7 @@ export default () => {
       style={{
         position: "absolute",
         left: 0,
-        top: 259,
+        top: 150,
         bottom: 0,
         width: "100%",
         borderTopLeftRadius: 20,

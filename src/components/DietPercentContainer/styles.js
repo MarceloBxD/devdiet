@@ -16,7 +16,7 @@ export const Container = styled.View`
 `;
 
 export const Percent = styled.Text`
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 700;
   text-align: center;
 `;
